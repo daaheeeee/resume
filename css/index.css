@@ -1,0 +1,463 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+@font-face {
+    src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+    format("woff2");
+    font-family: "Meta";
+    font-style: normal;
+    font-weight: normal;
+}
+
+html { 
+    /* overflow:hidden */
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
+}   
+.loading {
+    position:fixed;
+    top:0%; left:0; bottom:0; right:0;
+    background: #FDC800;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99;
+}
+
+#menu { position:fixed; top:50%; transform:translateY(-50%); right:120px; z-index:9 }
+
+#menu li { margin:10px 0;}
+#menu li a { display:block; width:20px; height:20px; border-radius:50%;
+    background: #ff9d00; position:relative; transition:all 0.5s}
+#menu li a span{ position:absolute; left:30px; opacity:0; color:#666; font-size: 12px; top:2px;}
+#menu li.on a {background: #F9eB2F; transform:scale(1.2); }
+#menu li.on a span {opacity:1;}
+
+section { 
+    width:100vw; 
+    height:100vh; 
+    position:relative;
+    overflow:hidden; 
+    border-bottom: 1px solid #FBC800;
+}
+
+#sect1 {
+    background-image: linear-gradient(135deg, #63D2F3 50%,  #Fbc800 50%);
+
+}
+#sect1 h1 {
+transition: all 0.5s;
+-webkit-text-stroke: 4px #d6f4f4;
+font-variation-settings: "wght" 600, "ital" 1;
+font-size: 8rem;
+text-align: center;
+color: transparent;
+font-family: "Meta", sans-serif;
+text-shadow: 10px 10px 0px #9ed027,
+    15px 15px 0px #EB413B,
+    45px 45px 10px #ff9d00;
+cursor: pointer;
+transform: translateY(50%);
+}
+
+#sect1 h1:hover {
+font-variation-settings: "wght" 100, "ital" 0;
+text-shadow: none;
+}
+
+#sect2 {
+    background: url(../images/rainbow.png)no-repeat;
+    background-size: 40% ;
+}
+
+
+#sect3 {
+    background: url(../images/legoback.png)no-repeat center;
+    background-size: cover;
+    position:relative;
+}
+
+#sect3 #skill > .row { display:flex; flex-wrap:wrap; 
+    align-content:center; justify-content:center;
+    /* align-content: = 두줄 이상일 때, align-items = 한줄정렬일 때 */
+}
+#sect3 #skill .container { 
+    width:25.3%; 
+    text-align:center; position:relative; 
+    margin:60px 0 50px 0;
+}
+#sect3 #skill .pBox { 
+    width:180px; height: 180px; 
+    position:absolute; line-height:180px;  
+    color:#000;
+    font-size:20px;
+}
+#sect3 #skill .tit {
+    color:#000;
+    transform: translate(0, 850%);
+    font-size: 20px;
+}
+#sect3 img:nth-child(1) {
+    width:150px; height:100px;
+    position:absolute;
+    top:62%; left:20%;
+    animation: lego-ani 10s infinite;
+}
+#sect3 img:nth-child(2){
+    width:200px; height:200px; 
+    position:absolute; 
+    top:70%; right:150px; 
+    animation: drift 7000ms infinite linear;
+}
+
+@keyframes lego-ani {
+    from {
+        transform: translate(0,0);
+    }
+    to {
+        transform: translate(-40px, 30px);
+    }
+}
+
+@keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+}  
+
+#sect4 {
+    background: url(../images/clouds.png) ;
+    background-size: 72%;
+} 
+
+#sect4 .circle {
+    width : 200px;
+    height : 200px;
+    border-radius: 48%;
+    position:absolute;
+    opacity: .9;
+}
+#sect4 .circle::after{
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -8px;
+    right: 62px;
+   
+    position: absolute;
+    bottom:-8px; left:50%; margin-left:-10px;
+}
+#sect4 .circle1 {
+    background: #63D2F3;
+    top:430px; left: 60px;
+}
+#sect4 .circle1::after{
+    border:10px solid #3498DB;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left-color: transparent; 
+    border-right-color: transparent;
+    border-top:none;
+}
+
+#sect4 .circle2 {
+    background: #9ed027;
+    top:100px; left:950px;
+}
+#sect4 .circle2::after{
+    border:10px solid #80b10e;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left-color: transparent; 
+    border-right-color: transparent;
+    border-top:none;
+}
+#sect4 .circle3 {
+    background: #EB413B;
+    top:100px; left:240px;
+}
+#sect4 .circle3::after{
+    border:10px solid #df3724;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left-color: transparent; 
+    border-right-color: transparent;
+    border-top:none;
+}
+#sect4 .circle4 {
+    background: #ff9d00;
+    top:50px; left:1300px;
+}
+#sect4 .circle4::after{
+    border:10px solid #ec960b;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left-color: transparent; 
+    border-right-color: transparent;
+    border-top:none;
+}
+#sect4 .circle5 {
+    background: #FBC800;
+    top:450px; left:600px;
+}
+#sect4 .circle5::after{
+    border:10px solid #FBC800;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left-color: transparent; 
+    border-right-color: transparent;
+    border-top:none;
+}
+#sect4 .circle .btn {
+    border: none;
+    position: relative;
+    background: none;
+    display: inline-block;
+    padding:20px 30px;
+    color: inherit;
+    letter-spacing: 2px;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.8s;
+    cursor: pointer;
+    color: #fff;
+    display: block;
+    outline: 1px solid transparent;
+    transform-style: preserve-3d;
+}
+
+#sect4 .btn:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 04.s;
+}
+
+
+#sect4 .circle .btn1 {
+    background-color: #9ed027;
+    top:70px; left:15px;
+}
+#sect4 .circle .btn1:after {
+    width: 100%;
+    height: 42%;
+    left: 0;
+    top: -40%;
+    background: #80b10e;
+    transform-origin: 0% 100%;
+    transform: rotateX(90deg);
+}
+#sect4 .circle .btn1:hover {
+    transform: rotateX(-45deg);    
+}
+
+#sect4 .circle .btn2 {
+    background-color: #F9eB2F;
+    top:70px; left:30px;
+}
+#sect4 .circle .btn2:after {
+    width: 100%;
+    height: 40%;
+    left: 0;
+    top: 100%;
+    background: #FBC800;
+    transform-origin: 0% 0%;
+    transform: rotateX(-90deg);
+}
+#sect4 .circle .btn2:hover {
+    transform: rotateX(35deg);   
+}
+
+#sect4 .circle .btn3 {
+    background-color: #ff9d00;
+    top:70px; left:12px;
+}
+#sect4 .circle .btn3:after {
+    width: 20%;
+    height: 100%;
+    left: -20%;
+    top: 0;
+    background: #ec960b;
+    transform-origin:100% 0%;
+    transform: rotateY(-90deg);
+}
+#sect4 .circle .btn3:hover {
+    transform: rotateY(25deg);   
+}
+
+#sect4 .circle .btn4 {
+    background-color: #63D2F3;
+    top:70px; left:6px;
+}
+#sect4 .circle .btn4:after {
+    width: 20%;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    background: #3498DB;
+    transform-origin: 0% 0%;
+    transform: rotateY(90deg);
+}
+#sect4 .circle .btn4:hover {
+    transform: rotateY(-25deg);
+}
+#sect4 .circle .btn5 {
+    background-color: #E74C3C;
+    top:80px; left:8px;
+}
+#sect4 .circle .btn5:after {
+    width: 20%;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    background: #df3724;
+    transform-origin: 0% 0%;
+    transform: rotateY(90deg);
+}
+#sect4 .circle .btn5:hover {
+    transform: rotateY(-25deg);
+}
+
+
+#sect4 .pf {
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.3);
+    display:none;
+}
+#sect4 .pf.on {
+    display:block;
+}
+#sect4 .pf .ppf {
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0; 
+}
+#sect4 .pf .ppf > div {
+    width:1000px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display:none;
+}
+#sect4 .close{
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    z-index: 999999;
+    cursor:pointer;
+}
+
+#sect5 {
+    background: url(../images/legoback2.png) no-repeat ;
+    background-size: cover;
+}
+
+#sect5 h2  { 
+    opacity: 0; animation: titUp 1.5s both; 
+    transform: translate(28%, 530%);
+    margin-left: -50px; animation: titLeft 1.5s both;
+    color:#ec960b
+}
+@keyframes titLeft {
+    0% {}
+    100% {margin-left: 0; opacity: 1;}
+}
+#sect5.on h2 { 
+    opacity:1
+}
+.formMailWrap {
+    position: relative;
+
+}
+
+.formMailWrap .contact {
+    width: 50%; 
+    display: inline-block; 
+    opacity: 0; animation: titUp 1.5s both 0.6s;
+    transform: translate(35%, 50%);
+}
+.formMailWrap .letter {
+    position: absolute; right: 0; top: 0; width: 50%; height: 400px; 
+    margin-top: 50px; opacity: 0; animation: titUp 1.5s both 1.2s;
+}
+.formMailWrap.on .contact {
+    opacity:1;
+}
+
+@keyframes titUp {
+    0% {}
+    100% {margin-top: 0; opacity: 1;}
+}
+
+.contact li {margin-bottom: 16px;}
+.contact li input, 
+.contact li textarea {
+    font-size: 1rem; padding: 0.9rem 1rem; background: #fafafa; 
+    border: 2px solid #e1e1e1; border-radius: 5px; width: 60%;
+}
+.contact  li input::placeholder ,
+.contact  li textarea::placeholder{
+    font-size: 0.9rem; color: #666; font-weight: bold;
+}
+.contact ul li textarea {
+    height: 140px; resize: none;
+}
+
+.contact a {
+    width: 60%; font-size: 1.2rem; padding: 1rem; 
+    background: #FDC800; border-radius: 5px; color: #fff; 
+    display: inline-block; text-align: center;
+}
+.letter ul {
+    position: relative; 
+    animation: letterani 2.5s infinite ease-in-out;
+}
+@keyframes letterani{
+    0%, 100% {}
+    50% {margin-top: -40px;}
+}
+
+.letter li {
+    position: absolute;  top:0; left:0; right:0; bottom:0;
+    transform: translate(5%, 250px); opacity: 0;
+}
+
+.letter li.on {
+    opacity:1
+}
+
+.letter  li:nth-child(2) {
+    margin-top: 0px; transition: 1.5s ease;
+}
+
+.letter li p {
+    position: absolute; left: 0; right:0; top:0; bottom:0;
+    transform: translate(-23.5%, 90px); 
+    top: 23%; text-align: center; width: 100%; color: #666; font-size: 1.5rem;
+    line-height: 2.8rem; opacity: 1; transition: 2s ease 1s;
+}
+.letter li p strong {
+    font-size: 1.3rem; background: #ff9d00; 
+    padding: 20px 7px; color: #fff;
+}
+.letter span {
+    position: absolute; display: inline-block; 
+    width: 45%; height: 17px; bottom: 0; background: rgba(0,0,0,.3); 
+    left: 10%; transform: translateY(900%); border-radius: 50%; 
+    filter: blur(13px); z-index: 1; 
+    animation: shadowani1 2.5s infinite ease-in-out;
+}
+@keyframes shadowani1{
+    0%, 100% {}
+    50% {width: 25%; height: 30px; background: rgba(0,0,0,.08); filter: blur(16px);}
+}
+
+
+
+
+
+
+
