@@ -12,7 +12,10 @@ $(window).on('load', function(){
     anim.setSpeed(2.9)
     $('.loading').delay(4500).fadeOut()
 })
-
+//새로고침 했을 때 스크롤바를 맨 위로 올라가게
+$('html, body').stop().animate({
+    scrollTop : 0
+}, 1000)
 
 //sect1 도형 움직임
 var html = '';
