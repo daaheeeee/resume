@@ -57,7 +57,7 @@ var sDist3 = $('#sect4').offset().top
 
 // 마지막구간이 윈도우높이보다 클때
 //var lastSect = $('#sect5').offset().top             
-// 마지막구간이 윈도우높이보다 작을때
+//마지막구간이 윈도우높이보다 작을때
 var lastSect = $('body').height() - $(window).height()
 // var sct=0;
 
@@ -65,19 +65,16 @@ $(window).on('scroll', function(){
     var sct = $(this).scrollTop()
     if ( sct>=sDist0 && sct<sDist1 ) {
         $('#menu li').eq(0).addClass('on').siblings().removeClass('on') 
-        $('.letter li').removeClass('on').fadeOut()
         
     } else if ( sct>=sDist1 && sct<sDist2 ) {
         $('#menu li').eq(1).addClass('on').siblings().removeClass('on')
-        $('.letter li').removeClass('on').fadeOut()
         
     } else if ( sct>=sDist2 && sct<sDist3 ) {
         $('#menu li').eq(2).addClass('on').siblings().removeClass('on')
-        $('.letter li').removeClass('on').fadeOut()
        
     } else if ( sct>=sDist3 && sct<lastSect ) {
         $('#menu li').eq(3).addClass('on').siblings().removeClass('on')
-        $('.letter li').removeClass('on').fadeOut()
+        $('.letter li').removeClass('on').fadeOut() 
        
     } else if ( sct>=lastSect ) {
         $('#menu li').eq(4).addClass('on').siblings().removeClass('on')
@@ -86,6 +83,41 @@ $(window).on('scroll', function(){
     } 
 
 })
+
+var typingBool = false; 
+var typingIdx=0; 
+var liIndex = 0;
+var liLength = $(".typing-txt li").length;
+// 타이핑될 텍스트를 가져온다 
+var typingTxt = $(".typing-txt li").eq(liIndex).text(); 
+typingTxt=typingTxt.split("");  
+if(typingBool==false){ 
+    typingBool=true; 
+    var tyInt = setInterval(typing,500); 
+}  
+function typing(){ 
+    if(typingIdx<typingTxt.length){  
+    $(".typing").append(typingTxt[typingIdx]); 
+    typingIdx++; 
+    } else{ 
+        if(liIndex>=liLength-1){
+            liIndex=0;
+        }else{ 
+            liIndex++; 
+        } 
+    //다음문장을 타이핑하기위한 셋팅
+        typingIdx=0;
+        typingBool = false; 
+        typingTxt = $(".typing-txt li").eq(liIndex).text(); 
+    //다음문장 타이핑전 
+        clearInterval(tyInt);
+        setTimeout(function(){
+            $(".typing").html('');
+            tyInt = setInterval(typing,500);
+        },2000);
+    } 
+}
+
 
 // https://rendro.github.io/easy-pie-chart/
 var arrChartColor = ['#92D027', '#63DEF3', '#eb413b', '#ff9d52', '#f9eb2f'];
@@ -132,7 +164,7 @@ $(window).on('scroll', function(){
 
 
 $('#sect4 .circle .btn ').on('click',function () {
-    var num = $(this).index()
+    var num = $(this).parents('li').index()
     $('#sect4 .pf').addClass('on')
     $('#sect4 .pf .ppf > div').eq(num).fadeIn().siblings().fadeOut()
     return false //a태그 때매 return false안하면 맨 위로 올라감
