@@ -15,7 +15,7 @@
     <script src="js/jquery.easypiechart.min.js"></script>
     <script src="js/TweenMax.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.8.0/bodymovin.min.js'></script>
-
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
 
@@ -48,53 +48,83 @@
         </section>
 
         <section id="sect2">
+            <div class="particles" id="particles"></div>
             <div class="toy">
                 <img src="./images/rainbow.png" alt="무지개">
                 <img src="./images/lego face 2 .png" alt="레고얼굴2">
                 <img src="./images/lego face happy .png" alt="레고얼굴3">                
             </div>
-            <div class="typing-txt"> 
-                <ul>
-                    <li>안녕하세요!</li>
-                    <li>프론트엔드개발자</li>
-                    <li>원다희입니다.</li>
-                </ul>
-            </div> 
-            <p class="typing"></p>
-            <div class="box"> 
-                <p class="about">
-                    ABOUT ME
-                </p>
-                <div class="name">
-                    <strong>원다희</strong><br>
-                    
-                    <div class="profile">
-                        Birth. 1997. 03. 11 <br>
-                        Phone. 010-2953-5378<br>
-                        Email. wdh123456@naver.com<br>
-                        Github. daaheeeee <br>
-                        Address. 경기도 고양시 일산서구
-                    </div>
-                </div>
+           
+            <div class="box">
+                <div class="abSlide">
+                    <div class="aboutTxt slide01">
+                        <div class="scrollEn">
+                            <div class="scrBox enTxt"> 
+                                I'm frontend developer <br> 
+                                Weon Da-hee.                                
+                            </div>
+                            <div class="scrBox enTxt">
+                                Hello, <br> How Do You Do?
+                            </div>
+                        </div>
 
-                <div class="meTxt">
-                    <div class="txtBox">
-                        <p class="adu">
-                            <span>Aducation</span><br>
-                            2018.03 - 2022.02<br>
-                            연세대학교 미래캠퍼스 보건행정학과 졸업<br><br>
-                            2021.12 - 2022.05<br>
-                            [디지털컨버전스_플럽드러닝] <br>
-                            PWA 제작 웹앱 프론트엔드 개발 양성과정 수료
-                        </p>
+                        <div class="scrollKo">
+                            <div class="scrBox">
+                                안녕하세요. <br> 만나서 반갑습니다!
+                            </div>
+                            <div class="scrBox">
+                                프론트엔드 개발자 <br> 
+                                원다희 입니다.
+                            </div>
+                        </div>
                     </div>
                     
+                    
+                    <div class="aboutTxt slide02">
+                        <p class="p01">
+                            ABOUT ME
+                        </p>
+                        <div class="meTit">
+                            <strong>원다희 </strong><br>
+                            
+                            <div class="profile">
+                                Birth. 1997. 03. 11 <br>
+                                Phone. 010-2953-5378<br>
+                                Email. wdh123456@naver.com<br>
+                                GitHub. daaheeeee <br>
+                                Address. 경기도 고양시 일산서구
+                            </div>
+                        </div>
+
+                        <div class="meTxt">
+                            <div class="txtBox">
+                                <p class="p02">
+                                    <span>Aducation</span><br>
+                                    2018.03 - 2022.02<br>
+                                    연세대학교 미래캠퍼스 보건행정학과 졸업<br><br>
+                                    2021.12 - 2022.05<br>
+                                    [디지털컨버전스_플럽드러닝] <br>
+                                    PWA 제작 웹앱 프론트엔드 개발 양성과정 수료
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
                 </div>
-            
             </div>
+
         </section>
 
         <section id="sect3">
+
+            <div class="typing-txt"> 
+                <ul>
+                    <li>SKILLS</li>
+                </ul>
+            </div> 
+            <p class="typing"></p>
+
             <article id="skill">
                 <div class="row">               
                     <div class="container">
@@ -114,16 +144,19 @@
                         <p class="tit">JavaScript</p>
                         <div class="skills " data-percent="0">
                             <span class="pBox"><span class="percent"></span><span>%</span></span></div>
-                    </div>
-    
+                    </div>   
                     <div class="container">
-                        <p class="tit">Photoshop</p>
+                        <p class="tit">NodeJS</p>
                         <div class="skills " data-percent="0">
-                            <span class="pBox"><span class="percent"></span><span>%</span></span></div>
+                        <span class="pBox"><span class="percent"></span><span>%</span></span></div>
                     </div>
-    
                     <div class="container">
-                        <p class="tit">Illustrator</p>
+                        <p class="tit">ReactJS</p>
+                        <div class="skills " data-percent="0">
+                        <span class="pBox"><span class="percent"></span><span>%</span></span></div>
+                    </div>
+                    <div class="container">
+                        <p class="tit">Vue</p>
                         <div class="skills " data-percent="0">
                         <span class="pBox"><span class="percent"></span><span>%</span></span></div>
                     </div>
@@ -141,7 +174,7 @@
                 <img src="./images/cloud2.png" alt="">
                 <img src="./images/cloud3.png" alt="">
                 <img src="./images/cloud4.png" alt="">
-                <img src="./images/cloud5.png" alt="">
+                <img src="./images/cloud1.png" alt="">
             </div>
             
             <div class="toy">
@@ -161,10 +194,13 @@
                         <button type="button" class="btn btn3"><span>STARBUCKS</span></button>
                     </li>
                     <li class="circle circle4">
-                        <button type="button" class="btn btn4"><span>PORTFOLIO 4</span></button>
+                        <button type="button" class="btn btn4"><span>PIXAR</span></button>
                     </li>
                     <li class="circle circle5">
-                        <button type="button" class="btn btn5"><span>PORTFOLIO 5</span></button> 
+                        <button type="button" class="btn btn5"><span>SHELTER</span></button> 
+                    </li>
+                    <li class="circle circle6">
+                        <button type="button" class="btn btn6"><span>ElECTRIC VEHICLE</span></button> 
                     </li>
                 </ul>
             </div>
@@ -174,8 +210,8 @@
                     <div class="pf1"><a href="https://daaheeeee.github.io/cafegate/" title="카페게이트"><img src="./images/cafegate.png" alt=""></a></div>
                     <div class="pf2"><a href="https://daaheeeee.github.io/gucciresume/" title="gucciresume"><img src="./images/resume.png" alt=""></a></div>
                     <div class="pf3"><a href="https://daaheeeee.github.io/starbucks_/" title="스타벅스"><img src="./images/starbucks.png" alt=""></a></div>
-                    <div class="pf4"><a href="#"></a></div>
-                    <div class="pf5"><a href="#"></a></div>
+                    <div class="pf4"><a href="#" title="픽사"><img src="./images/pixar.png" alt=""></a></div>
+                    <div class="pf5"><a href="https://daaheeeee.github.io/reactportfolio/" title="동물 보호소"><img src="./images/react.png" alt=""></a></div>
                 </div>
             </div>
             <div class="close">
@@ -185,11 +221,13 @@
 
         </section>
         <section id="sect5">
-            <h2>
-                CONTACT ME.
-            </h2>
-
+           <div class="box">
+               <div class="border"></div>
+           </div>
             <div class="formMailWrap row">
+                <h2>
+                    CONTACT ME.
+                </h2>    
                 <form action="#" method="post" class="contact">
                     <fieldset>
                         <!-- <legend>메일</legend> -->
