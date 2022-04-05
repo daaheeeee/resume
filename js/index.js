@@ -12,10 +12,12 @@ $(window).on('load', function(){
     anim.setSpeed(2.9)
     $('.loading').delay(4500).fadeOut()
 })
+
 //새로고침 했을 때 스크롤바를 맨 위로 올라가게
 $('html, body').stop().animate({
     scrollTop : 0
 }, 1000)
+
 
 //sect1 도형 움직임
 var html = '';
@@ -67,21 +69,26 @@ var lastSect = $('body').height() - $(window).height()
 $(window).on('scroll', function(){
     var sct = $(this).scrollTop()
     if ( sct>=sDist0 && sct<sDist1 ) {
-        $('#menu li').eq(0).addClass('on').siblings().removeClass('on') 
+        $('#menu li').eq(0).addClass('on').siblings().removeClass('on')
         
     } else if ( sct>=sDist1 && sct<sDist2 ) {
         $('#menu li').eq(1).addClass('on').siblings().removeClass('on')
+        $('#sect2 .meTxt').addClass('on').fadeIn()
         
     } else if ( sct>=sDist2 && sct<sDist3 ) {
         $('#menu li').eq(2).addClass('on').siblings().removeClass('on')
        
     } else if ( sct>=sDist3 && sct<lastSect ) {
         $('#menu li').eq(3).addClass('on').siblings().removeClass('on')
-        $('.letter li').removeClass('on').fadeOut() 
+        $('#sect5 .letter li').removeClass('on').fadeOut() 
+        $('#sect5 .formMailWrap ').removeClass('on').fadeOut() 
+        $('#sect5 .box').removeClass('on').fadeOut()
        
     } else if ( sct>=lastSect ) {
         $('#menu li').eq(4).addClass('on').siblings().removeClass('on')
-        $('.letter li').addClass('on').fadeIn() 
+        $('#sect5 .letter li').addClass('on').fadeIn() 
+        $('#sect5 .formMailWrap ').addClass('on').fadeIn() 
+        $('#sect5 .box').addClass('on').fadeIn()
        
     } 
 
@@ -121,10 +128,86 @@ function typing(){
     } 
 }
 
+$('#sect2 .abSlide').slick({
+    centerMode: true,
+    centerPadding: '0',
+    autoplay: false, // 자동재생
+    speed: 600, // 바뀌는 시간
+    slidesToShow: 1, // 보여질 슬라이드 수
+    slidesToScroll: 1, // 이동슬라이드 수
+    cssEase:'linear', // 속도함수
+    arrows: true, // 좌우화살표 사용여부
+    prevArrow:'<button class="slick-arrow slick-prev2"><i class="fas fa-chevron-left"></i></button>',
+    nextArrow:'<button class="slick-arrow slick-next2"><i class="fas fa-chevron-right"></i></button>',
+})
+
+//sect2 back
+var particles = document.getElementById("particles");
+var border = ["0%","0%"];
+var colors = ["#9ed027","#EB413B","#ff9d00","#Fbc800","#63D2F3"];
+
+function createParticle(event){
+    var x = event.clientX;
+    var y = event.clientY;
+    var color = Math.floor(Math.random() * 5);
+
+    var div = document.createElement("div");
+    div.style.marginLeft = x+"px";
+    div.style.marginTop = y+"px";
+    div.style.width = "10px";
+    div.style.borderTop = "5px solid transparent";
+    div.style.borderRight = "5px solid transparent";
+    div.style.borderLeft = "5px solid transparent";
+    div.style.borderBottom = "10px solid "+colors[color];
+    div.style.animation = "move 3s ease-in infinite";
+    particles.appendChild(div);
+    setTimeout(
+        function(){
+            div.remove();
+        }
+    , 5000);
+}
+
+function getParticles(){
+    var np = document.documentElement.clientWidth / 40;
+    particles.innerHTML = "";
+    for (var i = 0; i < np; i++) {
+        var w = document.documentElement.clientWidth;
+        var h = document.documentElement.clientHeight;
+        var rndw = Math.floor(Math.random() * w ) + 1;
+        var rndh = Math.floor(Math.random() * h ) + 1;
+        var widthpt = Math.floor(Math.random() * 8) + 5;
+        var opty = Math.floor(Math.random() * 4) + 1;
+        var anima = Math.floor(Math.random() * 12) + 8;
+        var bdr = Math.floor(Math.random() * 2);
+        var color = Math.floor(Math.random() * 5);
+
+        var div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.marginLeft = rndw+"px";
+        div.style.marginTop = rndh+"px";
+        div.style.width = widthpt+"px";
+        div.style.height = widthpt+"px";
+        div.style.opacity = opty;
+        div.style.backgroundColor = colors[color];
+        div.style.borderRadius = border[bdr];
+        div.style.animation = "move "+anima+"s ease-in infinite";
+        particles.appendChild(div);
+    }
+}
+
+function main(event){
+    getParticles();
+    particles.addEventListener("click", createParticle);
+}
+
+window.addEventListener("resize", main);
+window.addEventListener("load", main);
+
 
 // https://rendro.github.io/easy-pie-chart/
-var arrChartColor = ['#92D027', '#63DEF3', '#eb413b', '#ff9d52', '#f9eb2f'];
-var arrPercent = [90, 80, 70, 60, 50]
+var arrChartColor = ['#92D027', '#63DEF3', '#eb413b', '#ff9d52', '#f9eb2f', '#92D027'];
+var arrPercent = [90, 90, 75, 80, 80, 75, ]
 
 $('.skills').each(function(idx){ //idx 매개변수 = 자동으로 인덱스번호가 됨
     $(this).attr({'data-percent':arrPercent[idx]})//0%rk 90,80,70,60 ...으로 됨
@@ -214,6 +297,13 @@ TweenMax.to($('#sect4 .circle5'), 1, {
     repeatDelay: 0, 
     ease: Quad.easeInOut
 });
+TweenMax.to($('#sect4 .circle6'), 1, {
+    marginTop: -20,
+    repeat: -1, 
+    yoyo: true, 
+    repeatDelay: 0, 
+    ease: Quad.easeInOut
+});
 
 // contact 메일전송
 var name, address, subject, body
@@ -225,3 +315,4 @@ $('.contact a').on('click', function(){
     href = 'mailto:wdh123456@naver.com' + address + subject + body
     $(this).attr('href', href)
 })
+
