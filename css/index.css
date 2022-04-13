@@ -51,7 +51,6 @@ section {
 
 #sect1 {
     background-image: linear-gradient(135deg, #63D2F3 50%,  #Fbc800 50%);
-
 }
 #sect1 h1 {
 transition: all 0.5s;
@@ -65,7 +64,8 @@ text-shadow: 10px 10px 0px #9ed027,
     15px 15px 0px #EB413B,
     45px 45px 10px #ff9d00;
 cursor: pointer;
-transform: translateY(50%);
+transform: translate(0%, 60%);
+/* transform: translate(0%, 110%); */
 }
 
 #sect1 h1:hover {
@@ -103,13 +103,9 @@ text-shadow: none;
             translateZ(150px);
     }
 }
-
-#sect2 .toy img {
-    position:absolute;
-}
 #sect2 .toy img:nth-child(1) {
-    width:350px; height:350px;
-    position:absolute; right:0; top:-8%;
+    width:390px; height:390px;
+    position:absolute; right:0%; top:-4%;
     animation: rainbow 10s infinite;
 }
 @keyframes rainbow{
@@ -127,12 +123,14 @@ text-shadow: none;
     }
   }
 #sect2 .toy img:nth-child(2) {
-    width:150px; height:150px;
-    transform: translate(30%, 370%);
+    width:170px; height:170px;
+    position:absolute;
+    bottom:2%; left:3%;
 }
 #sect2 .toy img:nth-child(3) {
-    width:150px; height:150px;
-    transform: translate(29%, 370%);
+    width:170px; height:170px;
+    position:absolute;
+    bottom:2%; left:3%;
 }
 #sect2 .toy img:nth-child(3):hover {
     opacity:0;
@@ -140,14 +138,14 @@ text-shadow: none;
 
 #sect2 .enTxt {
     font-weight: 500; 
-    font-family: 'Pacifico', cursive;
+    font-family: 'Pacifico';
     letter-spacing: 0.05em; 
 }
  
 #sect2 .box {
-    position: absolute; 
+    position: absolute; top:50%; left:50%;
     width: 50%; 
-    transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
     border: 12px solid #FBC800; 
     border-radius:10px;
     box-shadow: 0px 0px 10px 7px #ddd; 
@@ -316,23 +314,28 @@ text-shadow: none;
 }
 #sect3 .typing {  
     position:absolute;
-    top:45%; left:37%;
+    top:50%; left:50%;
+    transform:translate(-50%, -50%);
     font-size: 75px;
     display: inline-block; 
     color:#3bc6f1;
     text-shadow: 2px 2px 2px #ddd; 
     font-family: 'Boogaloo';
     letter-spacing: 0.5em; 
-
 } 
+#sect3 #skill {   
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%, -60%);
+}
 
 #sect3 #skill > .row { 
     display:flex; flex-wrap:wrap; 
-    align-content:center; justify-content:center;
+    align-content:center; justify-content:center;   
 }
 #sect3 #skill .container { 
-    width:32%; 
-    text-align:center; position:relative; 
+    width:33.33%; 
+    text-align:center; 
     margin-top:100px;
 }
 #sect3 #skill .pBox { 
@@ -424,16 +427,13 @@ text-shadow: none;
       margin-right: 1300px;
     }
 }
-
-#sect4 .toy img {
-    position:absolute; bottom:0; right:0;
-}
 #sect4 .toy img:nth-child(1) {
-    width:270px; height:250px;
+    width:170px; height:170px;
+    position:absolute; bottom:0; right:2%;
 }
 #sect4 .toy img:nth-child(2) {
-    width:150px; height:160px;
-    bottom: 6%; right:4%;
+    width:170px; height:170px;
+    position:absolute; bottom:0%; right:2%;
 }
 #sect4 .toy img:nth-child(2):hover {
     opacity:0;
@@ -443,7 +443,8 @@ text-shadow: none;
     width : 200px;
     height : 200px;
     border-radius: 48%;
-    position:absolute; top:0; left:0;
+    position:absolute; top:50%; left:50%;
+    transform: translate(-50%, -50%);
 
 }
 #sect4 .circle::after{
@@ -451,7 +452,6 @@ text-shadow: none;
     content: "";
     width: 0;
     height: 0;
-    position: absolute;
     bottom: -8px;
     right: 62px;   
     position: absolute;
@@ -459,7 +459,7 @@ text-shadow: none;
 }
 #sect4 .circle1 {
     background: #63D2F3;
-    top:230px; left:250%;
+    top:80%; left:-150%;
 }
 #sect4 .circle1::after{
     border:10px solid #3498DB;
@@ -472,7 +472,7 @@ text-shadow: none;
 
 #sect4 .circle2 {
     background: #9ed027;
-    top:150px; left:750px;
+    top:170%; left:250%;
 }
 #sect4 .circle2::after{
     border:10px solid #80b10e;
@@ -484,7 +484,7 @@ text-shadow: none;
 }
 #sect4 .circle3 {
     background: #EB413B;
-    top:100px; left:50%;
+    top:-50%; left:-250%;
 }
 #sect4 .circle3::after{
     border:10px solid #df3724;
@@ -496,7 +496,7 @@ text-shadow: none;
 }
 #sect4 .circle4 {
     background: #ff9d00;
-    top:100px; left:580%;
+    top:-20%; left:300%;
 }
 #sect4 .circle4::after{
     border:10px solid #ec960b;
@@ -508,7 +508,7 @@ text-shadow: none;
 }
 #sect4 .circle5 {
     background: #FBC800;
-    top:450px; left:500%;
+    top:-50%; left:50%;
 }
 #sect4 .circle5::after{
     border:10px solid #FBC800;
@@ -519,11 +519,11 @@ text-shadow: none;
     border-top:none;
 }
 #sect4 .circle6 {
-    background: #FBC800;
-    top:450px; left:80%;
+    background: #EB413B;
+    top:130%; left:80%;
 }
 #sect4 .circle6::after{
-    border:10px solid #FBC800;
+    border:10px solid #EB413B;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-left-color: transparent; 
@@ -643,7 +643,7 @@ text-shadow: none;
     transform: rotateY(-25deg);
 }
 #sect4 .circle .btn6 {
-    background-color: #63D2F3;
+    background-color: #ff9d00;
     top:70px; left:5px;
     padding:20px 10px;
 }
@@ -652,7 +652,7 @@ text-shadow: none;
     height: 100%;
     left: 100%;
     top: 0;
-    background: #3498DB;
+    background: #ec960b;
     transform-origin: 0% 0%;
     transform: rotateY(90deg);
 }
@@ -699,11 +699,13 @@ text-shadow: none;
     opacity:1
 }
 #sect5 .formMailWrap {
-    position: relative; top:0; left:0;
+    /* position: relative; */
 }
+
 #sect5 .formMailWrap h2  { 
     opacity: 0; animation: titUp 1.5s both; 
-    position:absolute; top:50px; left:23%;
+    position:absolute; top:50%; left:50%;
+    transform: translate(-210%, -400%);
     animation: titLeft 1.5s both;
     font-size:30px;
     color:#63D2F3;
@@ -722,11 +724,14 @@ text-shadow: none;
     width: 70%; 
     display: inline-block; 
     opacity: 0; animation: titUp 1.5s both 0.6s;
-    position:absolute; top:120px; left:10%;   
+    position:absolute; top:50%; left:50%;
+    transform: translate(-50%, -20%); 
 }
 #sect5 .formMailWrap .letter {
-    position: absolute; right: 0; top: 50px; width: 50%; height: 400px; 
+    position: absolute; top:45%; left:35%;
+    width: 50%; height: 400px; 
     opacity: 0; animation: titUp 1.5s both 1.2s;
+    
 }
 #sect5 .formMailWrap.on .contact {
     opacity:1;
@@ -758,7 +763,7 @@ text-shadow: none;
     font-family: 'Boogaloo';
 }
 #sect5 .letter ul {
-    position: relative; top:30%; right:-10%;
+    position: relative; 
     animation: letterani 2.5s infinite ease-in-out;
 }
 @keyframes letterani{
@@ -767,7 +772,7 @@ text-shadow: none;
 }
 
 #sect5 .letter li {
-    position: absolute; top:0; left:0; right:0; bottom:0;
+    position: absolute; top:50%; left:50%; 
     opacity: 0;
 }
 #sect5 .letter li.on {
@@ -777,7 +782,7 @@ text-shadow: none;
     margin-top: 0px; transition: 1.2s ease;
 }
 #sect5 .letter li p {
-    position: absolute; right:10%; top:100px; 
+    position: absolute; left:-1%; top:100px; 
     text-align: center; width: 100%; color: #666; font-size: 1.5rem;
     line-height: 2.8rem; opacity: 1; transition: 2s ease 1s;
 }
@@ -787,8 +792,8 @@ text-shadow: none;
 }
 #sect5 .letter span {
     position: absolute; display: inline-block; 
-    width: 45%; height: 17px; bottom:-100px; background: rgba(0,0,0,.3); 
-    right: 25%;  border-radius: 50%; 
+    width: 45%; height: 17px; bottom:10%; background: rgba(0,0,0,.3); 
+    right: 10%;  border-radius: 50%; 
     filter: blur(13px); z-index: 1; 
     animation: shadowani1 2.5s infinite ease-in-out;
 }
@@ -796,3 +801,4 @@ text-shadow: none;
     0%, 100% {}
     50% {width: 25%; height: 30px; background: rgba(0,0,0,.08); filter: blur(16px);}
 }
+
